@@ -13,6 +13,7 @@
                     <th>ID</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Image</th>
                 </tr>
             </thead>
             <tbody id="result"></tbody>
@@ -30,10 +31,8 @@
                 
                 var table_row = "";
 
-                //for (var i = 0; i < ids.length; i++) {
                 for (var i = 0; i < ids.length; i++) {
                     console.log(ids[i]);
-                    //document.getElementById("result").innerHTML = ids[i] + "<br>";
                     table_row += "<tr>";
                     table_row += "<td>" + ids[i] + "</td>";
                     table_row += "<td></td>";
