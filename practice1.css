@@ -1,0 +1,28 @@
+/* 
+    Created on : Feb 28, 2023, 5:52:34 PM
+    Author     : enaranjorivera
+    File Name  : practice1.css
+*/
+table {
+    background-color:orange;
+    border:solid black 7px;
+    border-radius:25px;
+}
+
+#th1 {
+    color:white;
+    background-color:black;
+    border:solid black 2px;
+    outline:solid black 2px;
+}
+
+.tdclass {
+    background-color:#DEDEE6;
+    border:4px solid black;
+}
+
+.input1 {
+    color:white;
+    background-color:black;
+    border:1px solid white;
+}

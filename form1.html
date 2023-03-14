@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>A Form</h3>
+
+        <form>
+            <table>
+                <tr>
+                    <td>Number 1</td>
+                    <td>
+                        <input type="number" name="num1" id="num1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number 2</td>
+                    <td>
+                        <input type="number" name="num2" id="num2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Multiplied</td>
+                    <td>
+                        <input type="number" name="multResult" id="multResult">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Added</td>
+                    <td>
+                        <input type="number" name="addResult" id="addResult">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" name="addBtn" id="addBtn" value="Add" onclick="addNumbers()">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" name="multBtn" id="multBtn" value="Multiply">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            function addNumbers(){
+                //alert("Inside addNumbers function");
+                console.log("Inside addNumbers function");
+                
+                // Get the first number
+                var number1 = document.getElementById("num1").value;
+                console.log("Number 1 = " + number1);
+                
+                // Get the second number
+                var number2 = document.getElementById("num2").value;
+                console.log("Number 2 = " + number2);
+                
+                var add = Number(number1) + Number(number2);
+                console.log("Added = " + add);
+                document.getElementById("addResult").value = add;
+            }
+        </script>
+        
+    </body>
+</html>

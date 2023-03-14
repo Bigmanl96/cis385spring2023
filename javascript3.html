@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="result"></tbody>
+        </table>
+        
+        <script>
+            function init() {
+                var ids = [
+                    "ID1", // 0
+                    "ID2", // 1
+                    "ID3", // 2
+                    "ID4", // 3
+                    "ID5"  // 4
+                ];
+                
+                var table_row = "";
+
+                //for (var i = 0; i < ids.length; i++) {
+                for (var i = 0; i < ids.length; i++) {
+                    console.log(ids[i]);
+                    //document.getElementById("result").innerHTML = ids[i] + "<br>";
+                    table_row += "<tr>";
+                    table_row += "<td>" + ids[i] + "</td>";
+                    table_row += "<td></td>";
+                    table_row += "<td></td>";
+                    table_row += "</tr>";
+                }
+                document.getElementById("result").innerHTML = table_row;
+
+            }
+            window.onload = init();
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>Forms</h3>
+        
+        <form method="post">
+            First Name: 
+            <input type="text" name="fname" id="fname">
+            <br>
+            Last Name:
+            <input type="text" name="lname" id="lname">
+            <br>
+            
+            <select name="rooms">
+                <option value="">-select a room-</option>
+                <option value="F906">F906</option>
+                <option value="F07">F907</option>
+                <option value="F908">F908</option>
+            </select>
+            
+            <input type="button" value="Submit Form..." onclick="sayHello()">
+        </form>
+        
+        <script>
+            function sayHello(){
+                var first_name = document.getElementById("fname").value;
+                console.log("First Name = " + first_name);
+                alert("Hello " + first_name);
+            }
+        </script>
+        
+        
+    </body>
+</html>

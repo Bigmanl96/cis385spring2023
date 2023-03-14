@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RECTANGLE PROBLEM</title>
+        <style>
+            table {
+                background-color:orange;
+                border:solid black 7px;
+                border-radius:25px;
+            }
+            
+            #th1 {
+                color:white;
+                background-color:black;
+                border:solid black 2px;
+                outline:solid black 2px;
+            }
+            
+            .tdclass {
+                background-color:#DEDEE6;
+                border:4px solid black;
+            }
+            
+            .input1 {
+                color:white;
+                background-color:black;
+                border:1px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table>
+                <tr><th colspan="2" id="th1">RECTANGLE PROBLEM</th></tr>
+                <tr> <td><label>Length:</label></td><td><input type="text" class="tdclass"/> </td> </tr>
+                <tr> <td><label>Width:</label></td><td><input type="text" class="tdclass"/> </td> </tr>
+                <tr> <td><label>Area:</label></td><td><input id="area" type="text" readonly class="tdclass"/> </td> </tr>
+                <tr> <td><label>Perimeter:</label></td><td><input type="text" readonly class="tdclass"/> </td> </tr>
+                <tr>
+                    <td colspan="2" >
+                <center>
+                    <input type="button" value="Area" class="input1" />
+                    <input type="button" value="Perimeter" class="input1" />
+                    <input type="button" value="Both" class="input1" />
+                    <input type="reset" value="Clear" class="input1" />
+                </center>
+                </td>
+                </tr>
+            </table>
+        </form>
+        
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </body>
+</html>
