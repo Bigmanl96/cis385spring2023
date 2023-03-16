@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>Arrays</h3>
+        <script>
+            var cookies_all = "name1=value1;name2=value2;name3=value3";
+            console.log(cookies_all);
+            var my_cookies = cookies_all.split(";");
+            console.log(my_cookies[1]);
+            var cookie1 = my_cookies[0].split("=");
+            console.log(cookie1[0]);// name1
+            console.log(cookie1[1]);// value1
+            console.log("this is an example of the aplit method".split(" "));
+            
+            document.cookie = "spring2023=24";
+            document.cookie = "productid=1001";
+            
+            document.cookie = "username=John Doe; expires=Thu, 17 Mar 2024 12:00:00 UTC";
+            
+            document.cookie = "product1={'prodid:100','name:TV2','Price:1520'}";
+            
+        </script>
+    </body>
+</html>
