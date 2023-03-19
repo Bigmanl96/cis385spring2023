@@ -1,0 +1,35 @@
+<!--
+ Eduardo E. Naranjo, MS
+ Software Engineer
+ This File: index.html
+ 2023-03-19
+ Initial page for a multiple page folder
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CIS385</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div id="menu">Menu will load here</div>
+
+        <h3>Main Page</h3>
+
+        <button type="button" onclick="loadDoc()">Load Menu</button>
+
+        <script>
+            function loadDoc() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function () {
+                    document.getElementById("menu").innerHTML =
+                            this.responseText;
+                }
+                xhttp.open("GET", "menu.txt");
+                xhttp.send();
+            }
+        </script>
+    </body>
+</html>
