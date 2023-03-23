@@ -1,0 +1,115 @@
+<!--
+ Eduardo E. Naranjo, MS
+ Software Engineer
+ This File: test_dev_supermarket.html
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Supermarket</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12"><h3>BMCC Supermarket</h3></div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <input type="text" name="search" id="search" class="form-control">
+                    <input type="button" name="submitBtn" id="submitBtn" class="btn btn-primary" value="Save...">
+                </div>
+                <div class="col-md-6">
+                    <h4>List of Products</h4>
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <pre name="receipt" id="receipt">
+
+                    </pre>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script>
+            var products = [
+                {
+                    id: 1,
+                    name: "Product 1",
+                    price: 1.99
+                },
+                {
+                    id: 2,
+                    name: "Product 2",
+                    price: 2.99
+                },
+                {
+                    id: 3,
+                    name: "Product 3",
+                    price: 3.99
+                },
+                {
+                    id: 4,
+                    name: "Product 4",
+                    price: 4.99
+                },
+                {
+                    id: 5,
+                    name: "Product 5",
+                    price: 5.99
+                }
+            ];
+
+
+            function startStore() {
+                // Get today's Date
+                const d = new Date();
+                let text = d.toDateString();
+                
+                document.getElementById("receipt").innerHTML = "BMCC Supermarket "+ text +"\n";
+                console.log("Store Started on " + text);
+                document.getElementById("submitBtn").addEventListener("click", getProduct);
+            }
+
+
+            function getProduct() {
+
+
+                console.log("Inside getProduct function!");
+                var item = Number(document.getElementById("search").value);
+                console.log("Selected Item: " + item);
+
+                // Finding index of the product
+                const searchIndex = products.findIndex((products) => products.id === item);
+                console.log("Found Index " + searchIndex);
+                console.log("Name: " + products[searchIndex].name);
+                console.log(`Price: ${products[searchIndex].price}`);
+
+
+                document.getElementById("receipt").innerHTML += (products[searchIndex].name + "     ").substring(0, 12) + "\t\t" + products[searchIndex].price + "\n";
+
+                // Clear textbox
+                document.getElementById("search").value = "";
+            }
+
+            window.onload = startStore();
+        </script>
+
+    </body>
+</html>
