@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+ Author      : write your name
+ Date        : 2020-01-01
+ File        : test_dev_complex_object.html
+ Description : Use of a complex array/object
+-->
+<html>
+    <head>
+        <title>CIS385</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <h3>My Store</h3>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div id="myproducts"></div>
+                    <div id="mydepartments"></div>
+                </div>
+                <div class="col-md-2">
+                    <pre>Receipt</pre>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script>
+            var products = [
+                {
+                    itemid: 1,
+                    description: "Enter description for product 1",
+                    price: 100.99,
+                    image: "p01.jpg",
+                    colors: [
+                        {
+                            color: "White",
+                            discount: 5.99,
+                            available: 100
+                        },
+                        {
+                            color: "Blue",
+                            discount: 2.99,
+                            available: 200
+                        },
+                        {
+                            color: "Yellow",
+                            discount: 3.99,
+                            available: 50
+                        }
+                    ]
+                },
+                {
+                    itemid: 2,
+                    description: "Enter description for product 2",
+                    price: 200.99,
+                    image: "p02.jpg",
+                    colors: [
+                        {
+                            color: "Red",
+                            discount: 1.99,
+                            available: 100
+                        },
+                        {
+                            color: "Khaki",
+                            discount: 2.99,
+                            available: 80
+                        },
+                        {
+                            color: "Yellow",
+                            discount: 10.99,
+                            available: 50
+                        }
+                    ]
+                }
+            ];
+
+            function init() {
+                var line_total = 0;
+                var tblRow = "<table class='table table-bordered table-condensed'>";
+                tblRow += "<tr>";
+                tblRow += "<th>ID</th>";
+                tblRow += "<th>Description</th>";
+                tblRow += "<th>Price</th>";
+                tblRow += "<th>Image</th>";
+                tblRow += "<th>Available Colors</th>";
+                tblRow += "</tr>";
+
+                for (var i = 0; i < products.length; i++) {
+                    tblRow += "<tr>";
+                    tblRow += "<td>" + products[i].itemid + "</td>";
+                    tblRow += "<td>" + products[i].description + "</td>";
+                    tblRow += "<td>" + products[i].price + "</td>";
+                    tblRow += "<td><img src='images2/" + products[i].image + "' alt=''></td>";
+                    tblRow += "<td><ol>";
+
+                    for (var j = 0; j < products[i].colors.length; j++) {
+                        tblRow += "<li>Color: " + products[i].colors[j].color +
+                                "<br>Available: " + products[i].colors[j].available +
+                                "<br>Discount: " + products[i].colors[j].discount;
+                        line_total = Number(products[i].price) - Number(products[i].colors[j].discount);
+                        tblRow += "<br>Discounted Price: " + line_total + "</li>";
+                    }
+
+                    tblRow += "</ol></td>";
+
+                    tblRow += "<tr>";
+                }
+
+                tblRow += "</table>";
+
+                document.getElementById("myproducts").innerHTML = tblRow;
+             
+            }
+
+            window.onload = init();
+
+        </script>
+    </body>
+</html>
